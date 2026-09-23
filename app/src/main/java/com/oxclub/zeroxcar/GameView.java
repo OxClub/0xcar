@@ -79,7 +79,7 @@ public class GameView extends SurfaceView implements Runnable {
             Canvas c = holder.lockCanvas();
             if (c != null) {
                 update();
-                draw(c);
+                render(c);
                 holder.unlockCanvasAndPost(c);
             }
         }
@@ -128,7 +128,7 @@ public class GameView extends SurfaceView implements Runnable {
         enemies.add(new RectF(x, y, x + playerW, y + playerH));
     }
 
-    private void draw(Canvas c) {
+    private void render(Canvas c) {
         c.drawColor(Color.parseColor("#1a1a1a"));
 
         paint.setColor(Color.parseColor("#444444"));
